@@ -34,8 +34,7 @@ def get_email_from_account(web_drv):
     return web_drv.find_element(*INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT).get_attribute('value')
 
 
-def check_email_in_new_account(web_drv, user_name, email, password):
-    registration_user(web_drv, user_name, email, password)
+def check_email_in_new_account(web_drv, email, password):
     login_user(web_drv, email, password)
     return get_email_from_account(web_drv)
 

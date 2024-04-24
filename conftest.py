@@ -31,4 +31,9 @@ def email():
 @pytest.fixture()
 def password():
     characters = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(characters) for _ in range(6))
+    return ''.join(random.choice(characters) for _ in range(10))
+
+
+@pytest.fixture()
+def login_details():
+    return 'yankovskiy_8@gmail.com', '123456'

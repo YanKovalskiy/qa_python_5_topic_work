@@ -1,6 +1,6 @@
 import time
 
-from stellarburgers import StellarBurgers as sb
+import stellarburgers as sb
 from locators import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait as WDWait
@@ -14,7 +14,7 @@ class TestRegistrationUser:
         web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
 
         sb.login_user(web_drv, email, password)
-        time.sleep(1)
+        time.sleep(2)
         WDWait(web_drv, 3).until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER))
         web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
 
