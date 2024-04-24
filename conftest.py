@@ -16,7 +16,7 @@ def web_drv():
     # driver = webdriver.Firefox()
 
     driver.maximize_window()
-    driver.get('https://stellarburgers.nomoreparties.site/')
+    driver.get('https://stellarburgers.nomoreparties.site')
 
     yield driver
 
