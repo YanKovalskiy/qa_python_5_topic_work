@@ -37,4 +37,3 @@ def get_email_from_account(web_drv):
 def check_email_in_new_account(web_drv, email, password):
     login_user(web_drv, email, password)
     return get_email_from_account(web_drv)
-

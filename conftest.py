@@ -25,13 +25,13 @@ def web_drv():
 
 @pytest.fixture()
 def email():
-    return f'vladimir_yankovskiy_8_{random.randint(100, 999)}@gmail.com'
+    return f'vladimir_yankovskiy_8_{random.randint(1000, 9999)}@gmail.com'
 
 
 @pytest.fixture()
 def password():
     characters = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(characters) for _ in range(10))
+    return ''.join(random.choice(characters) for _ in range(7))
 
 
 @pytest.fixture()
