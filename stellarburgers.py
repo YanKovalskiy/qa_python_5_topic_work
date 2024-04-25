@@ -22,7 +22,7 @@ def login_user(web_drv, email, password):
 def get_email_from_account(web_drv):
     wait = WDWait(web_drv, 10)
     wait.until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER)).click()
-    return wait.until(ec.presence_of_element_located(INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT)).get_attribute('value')
+    return wait.until(ec.visibility_of_element_located(INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT)).get_attribute('value')
 
 
 def check_email_in_new_account(web_drv, email, password):
