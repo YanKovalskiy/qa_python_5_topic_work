@@ -1,6 +1,5 @@
 import pytest
 import stellarburgers as sb
-import time
 
 from locators import *
 from selenium.webdriver.support import expected_conditions as ec
