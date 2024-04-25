@@ -2,13 +2,11 @@ import pytest
 import random
 import string
 
-
 from selenium import webdriver
 
 
 @pytest.fixture()
 def web_drv():
-
     # Initialize Chrome WebDriver
     driver = webdriver.Chrome()
 

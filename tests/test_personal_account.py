@@ -47,9 +47,7 @@ class TestPersonalAccount:
     def test_exit_by_logout_button_personal_account(self, web_drv, login_details):
         web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
         sb.login_user(web_drv, *login_details)
-        WDWait(web_drv, 3).until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER))
-        web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
-        WDWait(web_drv, 3).until(ec.element_to_be_clickable(BUTTON_EXIT_IN_PERSONAL_ACCOUNT))
-        web_drv.find_element(*BUTTON_EXIT_IN_PERSONAL_ACCOUNT).click()
-        WDWait(web_drv, 3).until(ec.visibility_of_element_located(HEADER_ON_LOGIN_FORM))
-        assert web_drv.find_element(*HEADER_ON_LOGIN_FORM)
+        wait = WDWait(web_drv, 10)
+        wait.until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER)).click()
+        wait.until(ec.element_to_be_clickable(BUTTON_EXIT_IN_PERSONAL_ACCOUNT)).click()
+        assert wait.until(ec.visibility_of_element_located(HEADER_ON_LOGIN_FORM))
