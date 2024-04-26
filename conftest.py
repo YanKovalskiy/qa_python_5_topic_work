@@ -2,7 +2,9 @@ import pytest
 import random
 import string
 
+
 from selenium import webdriver
+from config import URL
 
 
 @pytest.fixture()
@@ -14,7 +16,7 @@ def web_drv():
     # driver = webdriver.Firefox()
 
     driver.maximize_window()
-    driver.get('https://stellarburgers.nomoreparties.site')
+    driver.get(URL)
 
     yield driver
 
