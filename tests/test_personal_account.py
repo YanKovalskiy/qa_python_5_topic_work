@@ -1,9 +1,10 @@
 import pytest
 
-from locators import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait as WDWait
 from user_account import UserAccount
+from locators import *
+from config import *
 
 
 class TestPersonalAccount:
@@ -34,8 +35,7 @@ class TestPersonalAccount:
             :param login_details: статичные данные (email, пароль)
             :return: None
         """
-        web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
-        web_drv.find_element(*LINK_REGISTER_IN_LOGIN_FORM).click()
+        web_drv.get(f'{URL}/register')
         web_drv.find_element(*LINK_LOGIN_IN_REG_FORM).click()
         assert UserAccount.check_email_in_new_account(web_drv, *login_details) == login_details[0]
 
@@ -46,8 +46,7 @@ class TestPersonalAccount:
             :param login_details: статичные данные (email, пароль)
             :return: None
         """
-        web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
-        web_drv.find_element(*LINK_RECOVERY_PASSWORD_IN_LOGIN_FORM).click()
+        web_drv.get(f'{URL}/forgot-password')
         web_drv.find_element(*LINK_LOGIN_IN_RECOVERY_PASS_FORM).click()
         assert UserAccount.check_email_in_new_account(web_drv, *login_details) == login_details[0]
 
@@ -65,11 +64,11 @@ class TestPersonalAccount:
             :param locator: целевой локатор
             :return: None
         """
-        web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
+        web_drv.get(f'{URL}/login')
         UserAccount.login_user(web_drv, *login_details)
         web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
         web_drv.find_element(*locator).click()
-        assert web_drv.find_element(*HEADER_ON_MAIN_PAGE)
+        assert web_drv.find_element(*HEADER_ON_MAIN_PAGE).is_displayed()
 
     # Выход по кнопке «Выйти» в личном кабинете
     def test_exit_by_logout_button_personal_account(self, web_drv, login_details):
@@ -79,9 +78,10 @@ class TestPersonalAccount:
             :param login_details: статичные данные (email, пароль)
             :return: None
         """
-        web_drv.find_element(*LINK_PERSONAL_ACCOUNT_IN_HEADER).click()
+        web_drv.get(f'{URL}/login')
         UserAccount.login_user(web_drv, *login_details)
         wait = WDWait(web_drv, 10)
         wait.until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER)).click()
         wait.until(ec.element_to_be_clickable(BUTTON_EXIT_IN_PERSONAL_ACCOUNT)).click()
-        assert wait.until(ec.visibility_of_element_located(HEADER_ON_LOGIN_FORM))
+        wait.until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER)).click()
+        assert wait.until(ec.visibility_of_element_located(HEADER_ON_LOGIN_FORM)).is_displayed()

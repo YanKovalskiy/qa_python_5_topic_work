@@ -25,7 +25,7 @@ class UserAccount:
 
     @staticmethod
     def get_email_from_account(web_drv):
-        web_drv.get(f'{URL}/account')
+        WDWait(web_drv, 10).until(ec.element_to_be_clickable(LINK_PERSONAL_ACCOUNT_IN_HEADER)).click()
         email = WDWait(web_drv, 10).until(ec.visibility_of_element_located(
             INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT)).get_attribute('value')
         return email
