@@ -1,13 +1,13 @@
 import pytest
 
-from locators import *
+from locators import MainPageLocator as MainPL
 
 
 class TestConstructor:
     @pytest.mark.parametrize(
         'tab_locator',
         (
-            (TAB_FILLINGS_IN_CONSTRUCTOR, TAB_SAUCES_IN_CONSTRUCTOR)
+            (MainPL.TAB_FILLINGS, MainPL.TAB_SAUCES)
         )
     )
     def test_tabs_in_constructor(self, web_drv, tab_locator):
@@ -29,7 +29,7 @@ class TestConstructor:
             :param web_drv: WebDriver
             :return: None
         """
-        web_drv.find_element(*TAB_SAUCES_IN_CONSTRUCTOR).click()
-        tab = web_drv.find_element(*TAB_BUNS_IN_CONSTRUCTOR)
-        tab.click()
-        assert 'type_current' in tab.get_attribute('class')
+        web_drv.find_element(*MainPL.TAB_SAUCES).click()
+        tab_buns = web_drv.find_element(*MainPL.TAB_BUNS)
+        tab_buns.click()
+        assert 'type_current' in tab_buns.get_attribute('class')

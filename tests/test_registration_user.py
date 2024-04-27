@@ -1,5 +1,5 @@
 from user_account import UserAccount
-from locators import *
+from locators import RegisterPageLocator as RegPL
 from config import URL
 
 
@@ -28,4 +28,4 @@ class TestRegistrationUser:
             :return: None
             """
         UserAccount.registration_user(web_drv, 'Владимир', email, '12345')
-        assert web_drv.find_element(*ERROR_MESSAGE_INCORRECT_PASSWORD_IN_REG_FORM).is_displayed()
+        assert web_drv.find_element(*RegPL.ERROR_MESSAGE_INCORRECT_PASSWORD).is_displayed()
