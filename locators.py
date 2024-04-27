@@ -68,20 +68,20 @@ HEADER_ON_LOGIN_FORM = By.XPATH, "//h2[text()='Вход']"
 # ------------------------------------------------------------------------------
 
 # Поле ввода Логин в Личном кабинете
-INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT = By.XPATH, "//li[2]/div/div/input"
+INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT = By.XPATH, "//input[@name='name' and @type='text']"
 
 # Кнопка Выход в Личном кабинете
-BUTTON_EXIT_IN_PERSONAL_ACCOUNT = By.XPATH, "//nav/ul/li[3]/button"
+BUTTON_EXIT_IN_PERSONAL_ACCOUNT = By.XPATH, "//input[@name='name' and @type='password']"
 
 # ------------------------------------------------------------------------------
 #  /register
 # ------------------------------------------------------------------------------
 
 # Поле вода Имя в форме регистрации
-INPUT_FIELD_NAME_IN_REG_FORM = By.XPATH, "//fieldset[1]/div/div/input"
+INPUT_FIELD_NAME_IN_REG_FORM = By.XPATH, "//label[text()='Имя']//parent::div/input"
 
 # Поле вода Email в форме регистрации
-INPUT_FIELD_EMAIL_IN_REG_FORM = By.XPATH, "//fieldset[2]/div/div/input"
+INPUT_FIELD_EMAIL_IN_REG_FORM = By.XPATH, "//label[text()='Email']//parent::div/input"
 
 # Поле вода Пароль в форме регистрации
 INPUT_FIELD_PASSWORD_IN_REG_FORM = By.NAME, 'Пароль'
