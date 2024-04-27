@@ -32,14 +32,6 @@ TAB_SAUCES_IN_CONSTRUCTOR = By.XPATH, "//span[text()='Соусы']/parent::div"
 # Вкладка "Булки" в конструкторе бургеров
 TAB_FILLINGS_IN_CONSTRUCTOR = By.XPATH, "//span[text()='Начинки']/parent::div"
 
-# Заголовок раздела "Булки" в конструкторе бургеров
-TITLE_SECTION_BUNS_IN_CONSTRUCTOR = By.XPATH, "//h2[text()='Булки']"
-
-# Заголовок раздела "Соусы" в конструкторе бургеров
-TITLE_SECTION_SAUCES_IN_CONSTRUCTOR = By.XPATH, "//h2[text()='Соусы']"
-
-# Заголовок раздела "Начинки" в конструкторе бургеров
-TITLE_SECTION_FILLINGS_IN_CONSTRUCTOR = By.XPATH, "//h2[text()='Начинки']"
 
 # ------------------------------------------------------------------------------
 #  /login
