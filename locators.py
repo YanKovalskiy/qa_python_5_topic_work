@@ -71,7 +71,7 @@ HEADER_ON_LOGIN_FORM = By.XPATH, "//h2[text()='Вход']"
 INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT = By.XPATH, "//input[@name='name' and @type='text']"
 
 # Кнопка Выход в Личном кабинете
-BUTTON_EXIT_IN_PERSONAL_ACCOUNT = By.XPATH, "//input[@name='name' and @type='password']"
+BUTTON_EXIT_IN_PERSONAL_ACCOUNT = By.XPATH, "//button[text()='Выход']"
 
 # ------------------------------------------------------------------------------
 #  /register
