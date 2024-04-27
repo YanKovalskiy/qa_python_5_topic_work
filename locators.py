@@ -61,7 +61,7 @@ LINK_REGISTER_IN_LOGIN_FORM = By.LINK_TEXT, 'Зарегистрироватьс�
 LINK_RECOVERY_PASSWORD_IN_LOGIN_FORM = By.LINK_TEXT, 'Восстановить пароль'
 
 # Заголовок в форме аутентификации при входе в Личный кабинет
-HEADER_ON_LOGIN_FORM = By.XPATH, "//main/div/h2"
+HEADER_ON_LOGIN_FORM = By.XPATH, "//h2[text()='Вход']"
 
 # ------------------------------------------------------------------------------
 #  /account/profile
