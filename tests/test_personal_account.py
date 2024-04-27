@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait as WDWait
 from user_account import UserAccount
 from locators import *
-from config import *
+from config import URL
 
 
 class TestPersonalAccount:

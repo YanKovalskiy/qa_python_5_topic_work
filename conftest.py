@@ -11,10 +11,6 @@ from config import URL
 def web_drv():
     # Initialize Chrome WebDriver
     driver = webdriver.Chrome()
-
-    # Initialize Firefox/Gecko WebDriver
-    # driver = webdriver.Firefox()
-
     driver.maximize_window()
     driver.get(URL)
 

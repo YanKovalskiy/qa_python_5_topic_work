@@ -1,6 +1,6 @@
 from user_account import UserAccount
 from locators import *
-from config import *
+from config import URL
 
 
 class TestRegistrationUser:
