@@ -1,94 +1,82 @@
 from selenium.webdriver.common.by import By
 
-# ------------------------------------------------------------------------------
-#  header
-# ------------------------------------------------------------------------------
 
-# Ссылка на Личный кабинет в шапке сайте
-LINK_PERSONAL_ACCOUNT_IN_HEADER = By.XPATH, "//header/nav/a"
+class HeaderLocator:
+    # Ссылка на Личный кабинет в шапке сайте
+    LINK_PERSONAL_ACCOUNT = By.XPATH, "//header/nav/a"
 
-# Ссылка на Конструктор в шапке сайте
-LINK_CONSTRUCTOR_IN_HEADER = By.XPATH, "//header/nav/ul/li[1]/a"
+    # Ссылка на Конструктор в шапке сайте
+    LINK_CONSTRUCTOR = By.XPATH, "//header/nav/ul/li[1]/a"
 
-# Логотип в шапке сайта
-LOGO_IN_HEADER = By.XPATH, "//header/nav/div/a"
-
-# ------------------------------------------------------------------------------
-#  main page
-# ------------------------------------------------------------------------------
-
-# Заголовок на главной странице "Соберите бургер"
-HEADER_ON_MAIN_PAGE = By.TAG_NAME, 'h1'
-
-# Кнопка «Войти в аккаунт» на главной странице
-BUTTON_LOGIN_ON_MAIN_PAGE = By.XPATH, "//button[text()='Войти в аккаунт']"
-
-# Вкладка "Булки" в конструкторе бургеров
-TAB_BUNS_IN_CONSTRUCTOR = By.XPATH, "//span[text()='Булки']/parent::div"
-
-# Вкладка "Соусы" в конструкторе бургеров
-TAB_SAUCES_IN_CONSTRUCTOR = By.XPATH, "//span[text()='Соусы']/parent::div"
-
-# Вкладка "Булки" в конструкторе бургеров
-TAB_FILLINGS_IN_CONSTRUCTOR = By.XPATH, "//span[text()='Начинки']/parent::div"
+    # Логотип в шапке сайта
+    LOGO = By.XPATH, "//header/nav/div/a"
 
 
-# ------------------------------------------------------------------------------
-#  /login
-# ------------------------------------------------------------------------------
+class MainPageLocator:
+    # Заголовок на главной странице "Соберите бургер"
+    HEADER_ASSEMBLE_BURGER = By.TAG_NAME, 'h1'
 
-# Поле вода Email в форме аутентификации при входе в Личный кабинет
-INPUT_FIELD_EMAIL_IN_LOGIN_FORM = By.XPATH, "//input[@type='text']"
+    # Кнопка «Войти в аккаунт» на главной странице
+    BUTTON_LOGIN = By.XPATH, "//button[text()='Войти в аккаунт']"
 
-# Поле вода Пароль в форме аутентификации при входе в Личный кабинет
-INPUT_FIELD_PASSWORD_IN_LOGIN_FORM = By.XPATH, "//input[@type='password']"
+    # Вкладка "Булки" в конструкторе бургеров
+    TAB_BUNS = By.XPATH, "//span[text()='Булки']/parent::div"
 
-# Кнопка "Войти" в форме аутентификации при входе в Личный кабинет
-BUTTON_LOGIN_IN_LOGIN_FORM = By.XPATH, "//button[text()='Войти']"
+    # Вкладка "Соусы" в конструкторе бургеров
+    TAB_SAUCES = By.XPATH, "//span[text()='Соусы']/parent::div"
 
-# Ссылка "Зарегистрироваться" в форме аутентификации при входе в Личный кабинет
-LINK_REGISTER_IN_LOGIN_FORM = By.LINK_TEXT, 'Зарегистрироваться'
+    # Вкладка "Булки" в конструкторе бургеров
+    TAB_FILLINGS = By.XPATH, "//span[text()='Начинки']/parent::div"
 
-# Ссылка "Восстановить пароль" в форме аутентификации при входе в Личный кабинет
-LINK_RECOVERY_PASSWORD_IN_LOGIN_FORM = By.LINK_TEXT, 'Восстановить пароль'
 
-# Заголовок в форме аутентификации при входе в Личный кабинет
-HEADER_ON_LOGIN_FORM = By.XPATH, "//h2[text()='Вход']"
+class LoginPageLocator:
+    # Поле вода Email в форме аутентификации при входе в Личный кабинет
+    INPUT_FIELD_EMAIL = By.XPATH, "//input[@type='text']"
 
-# ------------------------------------------------------------------------------
-#  /account/profile
-# ------------------------------------------------------------------------------
+    # Поле вода Пароль в форме аутентификации при входе в Личный кабинет
+    INPUT_FIELD_PASSWORD = By.XPATH, "//input[@type='password']"
 
-# Поле ввода Логин в Личном кабинете
-INPUT_FIELD_LOGIN_IN_PERSONAL_ACCOUNT = By.XPATH, "//input[@name='name' and @type='text']"
+    # Кнопка "Войти" в форме аутентификации при входе в Личный кабинет
+    BUTTON_LOGIN = By.XPATH, "//button[text()='Войти']"
 
-# Кнопка Выход в Личном кабинете
-BUTTON_EXIT_IN_PERSONAL_ACCOUNT = By.XPATH, "//button[text()='Выход']"
+    # Ссылка "Зарегистрироваться" в форме аутентификации при входе в Личный кабинет
+    LINK_REGISTER = By.LINK_TEXT, 'Зарегистрироваться'
 
-# ------------------------------------------------------------------------------
-#  /register
-# ------------------------------------------------------------------------------
+    # Ссылка "Восстановить пароль" в форме аутентификации при входе в Личный кабинет
+    LINK_RECOVERY_PASSWORD = By.LINK_TEXT, 'Восстановить пароль'
 
-# Поле вода Имя в форме регистрации
-INPUT_FIELD_NAME_IN_REG_FORM = By.XPATH, "//label[text()='Имя']//parent::div/input"
+    # Заголовок в форме аутентификации при входе в Личный кабинет
+    HEADER_ENTER = By.XPATH, "//h2[text()='Вход']"
 
-# Поле вода Email в форме регистрации
-INPUT_FIELD_EMAIL_IN_REG_FORM = By.XPATH, "//label[text()='Email']//parent::div/input"
 
-# Поле вода Пароль в форме регистрации
-INPUT_FIELD_PASSWORD_IN_REG_FORM = By.NAME, 'Пароль'
+class AccountProfilePageLocator:
+    # Поле ввода Логин в Личном кабинете
+    INPUT_FIELD_LOGIN = By.XPATH, "//input[@name='name' and @type='text']"
 
-# Кнопка "Зарегистрироваться" в форме регистрации
-BUTTON_REGISTER_IN_REG_FORM = By.XPATH, "//button[text()='Зарегистрироваться']"
+    # Кнопка Выход в Личном кабинете
+    BUTTON_EXIT = By.XPATH, "//button[text()='Выход']"
 
-# Ссылка "Войти" в форме регистрации
-LINK_LOGIN_IN_REG_FORM = By.LINK_TEXT, "Войти"
 
-# Сообщение об ошибке "Некорректный пароль"
-ERROR_MESSAGE_INCORRECT_PASSWORD_IN_REG_FORM = By.XPATH, "//p[text()='Некорректный пароль']"
+class RegisterPageLocator:
+    # Поле вода Имя в форме регистрации
+    INPUT_FIELD_NAME = By.XPATH, "//label[text()='Имя']//parent::div/input"
 
-# ------------------------------------------------------------------------------
-#  /forgot-password
-# ------------------------------------------------------------------------------
-# Ссылка "Войти" в форме Восстановление пароля
-LINK_LOGIN_IN_RECOVERY_PASS_FORM = By.LINK_TEXT, "Войти"
+    # Поле вода Email в форме регистрации
+    INPUT_FIELD_EMAIL = By.XPATH, "//label[text()='Email']//parent::div/input"
+
+    # Поле вода Пароль в форме регистрации
+    INPUT_FIELD_PASSWORD = By.NAME, 'Пароль'
+
+    # Кнопка "Зарегистрироваться" в форме регистрации
+    BUTTON_REGISTER = By.XPATH, "//button[text()='Зарегистрироваться']"
+
+    # Ссылка "Войти" в форме регистрации
+    LINK_LOGIN = By.LINK_TEXT, "Войти"
+
+    # Сообщение об ошибке "Некорректный пароль"
+    ERROR_MESSAGE_INCORRECT_PASSWORD = By.XPATH, "//p[text()='Некорректный пароль']"
+
+
+class ForgotPasswordPageLocator:
+    # Ссылка "Войти" в форме Восстановление пароля
+    LINK_LOGIN = By.LINK_TEXT, "Войти"
