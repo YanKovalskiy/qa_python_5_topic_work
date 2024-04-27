@@ -28,6 +28,9 @@ class MainPageLocator:
     # Вкладка "Булки" в конструкторе бургеров
     TAB_FILLINGS = By.XPATH, "//span[text()='Начинки']/parent::div"
 
+    # Модальное окно ожидания загрузки
+    MODAL_WAIT_WINDOW = By.XPATH, "//div[@class='Modal_modal_overlay__x2ZCr']"
+
 
 class LoginPageLocator:
     # Поле вода Email в форме аутентификации при входе в Личный кабинет

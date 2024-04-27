@@ -20,7 +20,7 @@ class TestPersonalAccount:
             :param login_details: статичные данные (email, пароль)
             :return: None
         """
-        web_drv.find_element(*LogPL.BUTTON_LOGIN).click()
+        web_drv.find_element(*MainPL.BUTTON_LOGIN).click()
         assert UserAccount.check_email_in_new_account(web_drv, *login_details) == login_details[0]
 
     def test_login_by_personal_account_button_on_header(self, web_drv, login_details):

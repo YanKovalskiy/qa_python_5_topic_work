@@ -1,6 +1,7 @@
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait as WDWait
 from locators import (HeaderLocator as HeadPL,
+                      MainPageLocator as MainPL,
                       RegisterPageLocator as RegPL,
                       LoginPageLocator as LogPL,
                       AccountProfilePageLocator as AccPPL)
@@ -26,6 +27,7 @@ class UserAccount:
 
     @staticmethod
     def get_email_from_account(web_drv):
+        WDWait(web_drv,30).until(ec.invisibility_of_element(MainPL.MODAL_WAIT_WINDOW))
         WDWait(web_drv, 10).until(ec.element_to_be_clickable(HeadPL.LINK_PERSONAL_ACCOUNT)).click()
         email = WDWait(web_drv, 10).until(ec.visibility_of_element_located(
             AccPPL.INPUT_FIELD_LOGIN)).get_attribute('value')
