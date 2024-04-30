@@ -29,7 +29,7 @@ class MainPageLocator:
     TAB_FILLINGS = By.XPATH, "//span[text()='Начинки']/parent::div"
 
     # Модальное окно ожидания загрузки
-    MODAL_WAIT_WINDOW = By.XPATH, "//div[@class='Modal_modal_overlay__x2ZCr']"
+    MODAL_WAIT_WINDOW = By.XPATH, "//*[contains(@class,'Modal_modal_overlay')]"
 
 
 class LoginPageLocator:
